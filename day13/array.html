@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Persisting Array/Object in LocalStorage</title>
+  </head>
+  <body>
+    <script>
+      // Storing Array in LocalStorage
+      const fruits = ["apple", "banana", "mango"];
+      const jsonArray = JSON.stringify(fruits);
+      localStorage.setItem("fruits", jsonArray);
+
+      // Storing Object in LocalStorage
+      const Person = {
+        name: "Daniel",
+        age: 25,
+      };
+      const personJson = JSON.stringify(Person);
+      localStorage.setItem("person", personJson);
+
+      //   Accessing Array from LocalStorage
+      const fruitsInStorage = localStorage.getItem("fruits");
+      const originalFruits = JSON.parse(fruitsInStorage);
+      console.log(originalFruits);
+
+      //   Accessing Object from LocalStorage
+      const personInStorage = localStorage.getItem("person");
+      const originalPerson = JSON.parse(personInStorage);
+      console.log(originalPerson);
+    </script>
+  </body>
+</html>
