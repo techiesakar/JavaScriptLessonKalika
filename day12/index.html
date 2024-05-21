@@ -16,7 +16,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Document</title>
+    <title>DarkMode</title>
     <link href="style.css" rel="stylesheet" />
   </head>
   <body class="">
@@ -27,22 +27,9 @@
     </div>
     <script>
       const modeToggle = document.getElementById("changeMode");
-      console.log(modeToggle);
-      const mode = localStorage.getItem("mode");
-
       modeToggle.onclick = function () {
         document.documentElement.classList.toggle("dark");
-        const mode = localStorage.getItem("mode");
-        if (mode === "dark") {
-          localStorage.setItem("mode", "light");
-        } else {
-          localStorage.setItem("mode", "dark");
-        }
       };
-
-      const javascriptID = document.getElementById("javascript");
-      javascriptID.classList.add("hey");
-      const htmlTag = document.documentElement;
     </script>
   </body>
 </html>
