@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Number</title>
+  </head>
+  <body>
+    <script>
+      const types = ["num", "small", "capital", "special"];
+
+      function PickRandomType() {
+        return Math.round(Math.random() * types.length - 1);
+      }
+
+      let randomPassword = "";
+
+      const numbers = "0123456789";
+      const small = "abcdedfghijkmnopqrstuvwxyz";
+      const capital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const special = "!@#$%^&*()_+";
+
+      function PickRandomString(type) {
+        if (type === "num") {
+          const index = Math.floor(Math.random() * numbers.length);
+          randomPassword += numbers[index];
+        } else if (type == "small") {
+          const index = Math.floor(Math.random() * small.length);
+          randomPassword += small[index];
+        } else if (type == "capital") {
+          const index = Math.floor(Math.random() * capital.length);
+          randomPassword += capital[index];
+        } else {
+          const index = Math.floor(Math.random() * special.length);
+          randomPassword += special[index];
+        }
+      }
+
+      function generateRandomPassword() {
+        while (randomPassword.length <= 10) {
+          const index = PickRandomType();
+          let type = types[index];
+          PickRandomString(type);
+        }
+        if (randomPassword.length > 10) {
+          console.log(randomPassword, "This is random password");
+        }
+      }
+
+      generateRandomPassword();
+    </script>
+  </body>
+</html>

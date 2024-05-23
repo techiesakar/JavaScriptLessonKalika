@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analog Clock</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="h-screen w-full flex items-center justify-center">
+    <div
+      class="size-[450px] rounded-full relative"
+      style="background: url(clock.jpg) no-repeat; background-size: 100%"
+    >
+      <div
+        class="size-[5%] bg-gray-800 rounded-full right-1/2 absolute bottom-[47.5%] right-[47.8%]"
+      ></div>
+      <div
+        id="hour"
+        class="hour w-[1.5%] h-[18%] origin-bottom bg-gray-600 absolute right-[49.75%] top-[32%] rounded-t"
+      ></div>
+      <div
+        id="minute"
+        class="minute w-[1%] h-[22%] bg-gray-800 origin-bottom absolute right-[50%] top-[28%] rounded-t"
+      ></div>
+      <div
+        id="second"
+        class="second w-[1%] h-[25%] bg-red-600 origin-bottom absolute right-[50%] top-[26%] rounded-t"
+      ></div>
+    </div>
+    <script src="analog.js"></script>
+  </body>
+</html>
