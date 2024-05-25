@@ -2,31 +2,32 @@
 const passwordField = document.getElementById("passwordField")
 const generateBtn = document.getElementById("generateBtn")
 
-
+const lengthInput = document.getElementById("length")
 
 let mySring = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_?:<>0123456789"
 
 
-
-let random5String = ""
-
 function generatePassword() {
-    for (i = 0; i < 10; i++) {
+    let randomPassword = ""
+    const lengthValue = parseInt(lengthInput.value)
+
+    for (i = 0; i < lengthValue; i++) {
         const indexForString = Math.floor(Math.random() * mySring.length)
         const currentRandomString = mySring[indexForString]
-        random5String += currentRandomString
+        randomPassword += currentRandomString
     }
-    return random5String
+    passwordField.innerText = randomPassword
 }
 
 
-passwordField.innerText = generatePassword()
+generatePassword()
 
 
-generateBtn.onclick = function () {
-    random5String = ""
-    passwordField.innerText = generatePassword()
-}
+
+
+generateBtn.addEventListener("click", generatePassword)
+
+lengthInput.addEventListener("change", generatePassword)
 
 
 
