@@ -29,7 +29,7 @@
 // 1, 0, 0, 0,0,1,2,4,0,0,3,1,0,0,4,1,1,1,1,0,1,4,2,0,2,1,0,3,2,0,3
 
 // string also behaves like an array - it has length and index same as array
-let mySring = "abcdefghijklmnopqrstuvwxyz"
+let mySring = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_?:<>0123456789"
 console.log(mySring[0])
 
 let random5String = ""  // gejhg
@@ -48,6 +48,9 @@ for (i = 0; i < 5; i++) {
 }
 
 console.log(random5String)
+// xY37*&ch4 3GF37*&ch4
+
+
 
 
 
