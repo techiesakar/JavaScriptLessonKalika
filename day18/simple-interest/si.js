@@ -38,6 +38,16 @@ function calculateInterest() {
     simpleInterestEle.textContent = simpleInterest
 }
 
-calculateBtn.onclick = function () {
+
+// calculateBtn.onclick = function () {
+//     calculateInterest()
+// }
+principalInputEle.oninput = function () {
+    calculateInterest()
+}
+timeEle.oninput = function () {
+    calculateInterest()
+}
+rateEle.oninput = function () {
     calculateInterest()
 }
