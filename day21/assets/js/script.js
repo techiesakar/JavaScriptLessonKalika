@@ -32,27 +32,34 @@ let activePlayer = 0
 
 const scores = [0, 0]
 
-btnRoll.addEventListener('click', function () {
-  const dice = Math.floor(Math.random() * 6) + 1
-  diceEle.classList.remove("hidden")
-  diceEle.src = `assets/images/dice-${dice}.png`
+let isGameOn = true
 
-  if (dice !== 1) {
-    currentScore += dice
-    document.getElementById(`current--${activePlayer}`).textContent = currentScore
-  }
-  else {
-    switchPlayer()
+btnRoll.addEventListener('click', function () {
+  if (isGameOn) {
+    const dice = Math.floor(Math.random() * 6) + 1
+    diceEle.classList.remove("hidden")
+    diceEle.src = `assets/images/dice-${dice}.png`
+
+    if (dice !== 1) {
+      currentScore += dice
+      document.getElementById(`current--${activePlayer}`).textContent = currentScore
+    }
+    else {
+      switchPlayer()
+    }
   }
 })
 
 btnHold.addEventListener('click', function () {
-  scores[activePlayer] += currentScore
-  if (scores[activePlayer] >= 10) {
-    document.querySelector(`.player--${activePlayer}`).classList.add("player--winner")
-  }
-  else {
-    switchPlayer()
+  if (isGameOn) {
+    scores[activePlayer] += currentScore
+    if (scores[activePlayer] >= 10) {
+      isGameOn = false
+      document.querySelector(`.player--${activePlayer}`).classList.add("player--winner")
+    }
+    else {
+      switchPlayer()
+    }
   }
 })
 
