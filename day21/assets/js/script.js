@@ -13,6 +13,7 @@ const diceEle = document.querySelector(".dice")
 
 const btnRoll = document.querySelector('.btn--roll')
 const btnHold = document.querySelector('.btn--hold')
+const btnNew = document.querySelector('.btn--new')
 
 // Selecting player section
 
@@ -53,7 +54,7 @@ btnRoll.addEventListener('click', function () {
 btnHold.addEventListener('click', function () {
   if (isGameOn) {
     scores[activePlayer] += currentScore
-    if (scores[activePlayer] >= 10) {
+    if (scores[activePlayer] >= 20) {
       isGameOn = false
       document.querySelector(`.player--${activePlayer}`).classList.add("player--winner")
     }
@@ -71,6 +72,39 @@ function switchPlayer() {
   document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer]
   activePlayer = activePlayer === 0 ? 1 : 0
 }
+
+
+btnNew.addEventListener('click', () => {
+  if (!isGameOn) {
+    currentScore = 0
+    activePlayer = 0
+    score0Ele.textContent = 0
+    score1Ele.textContent = 0
+    current0Ele.textContent = 0
+    current1Ele.textContent = 0
+    scores[0] = 0
+    scores[1] = 0
+    diceEle.classList.add("hidden")
+
+    Player0Ele.classList.add("player--active")
+    Player1Ele.classList.remove("player--active")
+
+    Player0Ele.classList.remove("player--winner")
+    Player1Ele.classList.remove("player--winner")
+    isGameOn = true
+
+  }
+})
+
+/**
+ * 
+ * currentscore both
+ * scores both 
+ * dice image reset
+ * winner background reset
+ */
+
+
 
 
 
