@@ -52,3 +52,5 @@ const brands = [
         ]
     }
 ]
+
+console.log(brands.find((brand) => brand.name === "apple").products)
