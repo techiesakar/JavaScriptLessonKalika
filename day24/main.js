@@ -19,7 +19,6 @@ const fetchData = async () => {
         <td>${item.user.fullName}</td>
       </tr>`
     })
-
 }
 
 fetchData()
