@@ -4,6 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body></body>
+  <body class="p-20">
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 from">
+        <label for="from" class="font-semibold text-lg">From </label>
+        <select
+          class="px-4 py-2 rounded-lg border border-gray-200"
+          name=""
+          id="from"
+        ></select>
+      </div>
+      <div class="flex flex-col gap-4 to">
+        <label for="from" class="font-semibold text-lg">To </label>
+        <select
+          class="px-4 py-2 rounded-lg border border-gray-200"
+          name=""
+          id="to"
+        ></select>
+      </div>
+    </div>
+    <script src="country-list.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
