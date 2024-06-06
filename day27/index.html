@@ -2,6 +2,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      input::-ms-reveal,
+      input::-ms-clear {
+        display: none;
+      }
+    </style>
 
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
@@ -13,11 +19,11 @@
       <div class="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-6">
         <h2 class="text-2xl font-bold text-gray-200 mb-4">Sign Up</h2>
         <form
-          class="flex flex-col"
+          class="flex flex-col space-y-4"
           onsubmit="return validate()"
           name="signUpForm"
         >
-          <div class="flex space-x-4 mb-4">
+          <div class="flex space-x-4">
             <input
               placeholder="First Name"
               class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 w-1/2 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
@@ -29,21 +35,46 @@
               type="text"
             />
           </div>
-          <input
-            placeholder="Email"
-            class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
-            type="email"
-          />
-          <input
-            placeholder="Password"
-            class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
-            type="password"
-          />
-          <input
-            placeholder="Confirm Password"
-            class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
-            type="password"
-          />
+          <div>
+            <input
+              placeholder="Email"
+              class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 w-full transition ease-in-out duration-150"
+              type="email"
+              name="email"
+            />
+          </div>
+          <div class="flex gap-2 items-center justify-between">
+            <input
+              name="password"
+              placeholder="Password"
+              required
+              class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 flex-1"
+              type="password"
+            />
+            <button
+              type="button"
+              name="showPassBtn"
+              class="showHide bg-indigo-500 rounded-lg px-3 py-2 text-white"
+            >
+              Show
+            </button>
+          </div>
+          <div class="flex gap-2 items-center justify-between">
+            <input
+              name="confirmPassword"
+              placeholder="Confirm Password"
+              required
+              class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 flex-1"
+              type="password"
+            />
+            <button
+              type="button"
+              name="confirmPassButton"
+              class="showHide bg-indigo-500 rounded-lg px-3 py-2 text-white"
+            >
+              Show
+            </button>
+          </div>
           <p class="text-white mt-4">
             Already have an account?
             <a class="text-sm text-blue-500 -200 hover:underline mt-4" href="#"
@@ -52,7 +83,7 @@
           </p>
           <button
             class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
-            type="button"
+            type="submit"
           >
             Sign Up
           </button>
