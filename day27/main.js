@@ -1,4 +1,4 @@
-const showHideBtns = document.querySelectorAll(".showHide")
+const showHideBtns = document.querySelectorAll(".showHide") // 2 buttons
 
 
 function validate() {
@@ -7,30 +7,27 @@ function validate() {
 
 
 for (i = 0; i < showHideBtns.length; i++) {
-    // showHideBtns[i].addEventListener("click", function () {
-    //     console.log(this.name, "hey this")
-    // })
-
     showHideBtns[i].addEventListener("click", function () {
-        // console.log(this.name)
         showHidePassword(this.name)
     })
-
-
-
-
 }
 
 
 function showHidePassword(buttonName) {
-    let inputField
+    let inputFieldName
+
     if (buttonName === "confirmPassButton") {
-        inputField = "confirmPassword"
+        inputFieldName = "confirmPassword"
     }
 
     else if (buttonName === "showPassBtn") {
-        inputField = "password"
+        inputFieldName = "password"
     }
-    document.forms["signUpForm"][inputField].type = document.forms["signUpForm"][inputField].type === "password" ? "text" : "password"
+
+    const inputField = document.forms["signUpForm"][inputFieldName]
+
+    let inputFieldType = inputField.type // text or password
+
+    inputField.type = inputFieldType === "password" ? "text" : "password"
 
 }
