@@ -5,24 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style></style>
   </head>
-  <body class="p-20">
-    <div class="flex flex-col gap-4">
-      <div class="flex flex-col gap-4 from">
-        <label for="from" class="font-semibold text-lg">From </label>
-        <select
-          class="px-4 py-2 rounded-lg border border-gray-200"
-          name=""
-          id="from"
-        ></select>
+  <body class="p-10">
+    <div class="flex flex-col gap-4 p-4">
+      <div class="gap-4 from flex">
+        <input
+          type="text"
+          class="border p-2 rounded-md flex-1"
+          placeholder="Enter Amount"
+        />
+        <div
+          class="px-4 justify-between py-2 border border-gray-300 rounded-lg flex gap-2"
+        >
+          <img src="https://flagcdn.com/48x36/np.png" alt="" class="size-6" />
+          <select
+            class="border-0 outline-none w-fit"
+            name=""
+            id="from"
+          ></select>
+        </div>
       </div>
-      <div class="flex flex-col gap-4 to">
-        <label for="from" class="font-semibold text-lg">To </label>
-        <select
-          class="px-4 py-2 rounded-lg border border-gray-200"
-          name=""
-          id="to"
-        ></select>
+      <div class="gap-4 from flex">
+        <div
+          class="px-4 py-2 border border-gray-300 rounded-lg flex gap-2 w-fit"
+        >
+          <img src="https://flagcdn.com/48x36/ae.png" alt="" class="size-6" />
+          <select class="border-0 outline-none w-fit" name="" id="to"></select>
+        </div>
       </div>
     </div>
     <script src="country-list.js"></script>
