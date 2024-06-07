@@ -15,17 +15,12 @@
           Sign Up Form
         </h2>
 
-        <form
-          name="signup"
-          class="mx-auto max-w-lg rounded-lg border"
-          method="post"
-          onsubmit="return handleSubmit()"
-        >
+        <form name="signup" class="mx-auto max-w-lg rounded-lg border">
           <div class="flex flex-col gap-4 p-4 md:p-8">
-            <div>
+            <div class="space-y-1">
               <label
                 for="email"
-                class="mb-2 inline-block text-sm text-gray-800 sm:text-base"
+                class="inline-block text-sm text-gray-800 sm:text-base"
                 >Email</label
               >
               <input
@@ -33,12 +28,13 @@
                 class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
                 required
               />
+              <span id="email-error" class="text-red-500 text-sm hidden"></span>
             </div>
 
-            <div>
+            <div class="space-y-1">
               <label
                 for="password"
-                class="mb-2 inline-block text-sm text-gray-800 sm:text-base"
+                class="inline-block text-sm text-gray-800 sm:text-base"
                 >Password</label
               >
               <input
@@ -46,12 +42,15 @@
                 class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
                 required
               />
+              <span class="text-red-500 text-sm"
+                >Password must be at least 6 characters long</span
+              >
             </div>
 
-            <div>
+            <div class="space-y-1">
               <label
                 for="confirmPassword"
-                class="mb-2 inline-block text-sm text-gray-800 sm:text-base"
+                class="inline-block text-sm text-gray-800 sm:text-base"
                 >confirm Password</label
               >
               <input
@@ -59,14 +58,18 @@
                 class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
                 required
               />
+              <span class="text-red-500 text-sm"
+                >Confirm password don't match</span
+              >
             </div>
-
-            <button
-              class="block rounded-lg bg-gray-800 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-gray-300 transition duration-100 hover:bg-gray-700 focus-visible:ring active:bg-gray-600 md:text-base"
-            >
-              Sign up
-            </button>
           </div>
+          <button
+            onclick="handleSubmit()"
+            type="button"
+            class="block rounded-lg bg-gray-800 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-gray-300 transition duration-100 hover:bg-gray-700 focus-visible:ring active:bg-gray-600 md:text-base"
+          >
+            Sign up
+          </button>
         </form>
       </div>
     </div>

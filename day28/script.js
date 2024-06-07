@@ -1,6 +1,6 @@
 const handleSubmit = () => {
+    // e.preventDefault()
     const email = document.forms["signup"]["email"].value;
-    alert(email)
     const password = document.forms["signup"]["password"].value;
     const confirmPassword = document.forms["signup"]["confirmPassword"].value;
 
@@ -11,15 +11,26 @@ const handleSubmit = () => {
 
 
 const validateEmail = (email) => {
+    const emailEle = document.forms["signup"]["email"]
+    const emailErrorEle = document.getElementById("email-error")
+
     if (email.length < 10) {
-        alert("Email must be at least 10 characters")
-        return false
+        // if false
+        emailEle.style.borderColor = "red"
+        emailErrorEle.classList.remove("hidden")
+        emailErrorEle.textContent = "Email must be at least 10 characters"
     }
+    else {
+        emailErrorEle.classList.add("hidden")
+        emailErrorEle.textContent = ""
+
+    }
+
 }
 
 const validatePassword = (password, confirmPassword) => {
     if (password !== confirmPassword) {
-        alert("Passwords do not match")
-        return false
+
     }
+
 }
