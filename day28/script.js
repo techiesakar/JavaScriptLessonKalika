@@ -12,6 +12,7 @@ const handleSubmit = () => {
 
 const validateEmail = (email) => {
     const emailRegex = /[A-Za-z0-9]+(?:[.][A-Za-z0-9]+)*@[A-Za-z0-9]+\.[a-zA-Z]{2,3}/
+
     const emailEle = document.forms["signup"]["email"]
     const emailErrorEle = document.getElementById("email-error")
 

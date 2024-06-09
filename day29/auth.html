@@ -1,0 +1,131 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link for tailwindcss -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- linking javaScript file -->
+    <script defer src="./main.js"></script>
+  </head>
+
+  <body>
+    <section
+      class="bg-purple-100 flex justify-center items-center min-h-screen"
+    >
+      <div class="signUp-page">
+        <form id="form" class="max-w-md bg-white -md rounded px-8 py-2">
+          <h2 class="font-black text-3xl align-center text-blue-500 py-5">
+            Sign Up
+          </h2>
+          <hr />
+          <div class="my-4">
+            <label
+              for="username"
+              class="block text-gray-700 text-sm font-bold mb-2"
+              >Name:</label
+            >
+            <input
+              type="text"
+              name="username"
+              id="username"
+              required
+              class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:-outline"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              for="useremail"
+              class="block text-gray-700 text-sm font-bold mb-2"
+              >Email:</label
+            >
+            <input
+              type="email"
+              name="useremail"
+              id="useremail"
+              required
+              class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:-outline"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              for="userpswd"
+              class="block text-gray-700 text-sm font-bold mb-2"
+              >Password:</label
+            >
+            <div
+              class="flex items-center justify-between appearance-none border rounded text-gray-700 leading-tight"
+            >
+              <input
+                type="password"
+                name="userpswd"
+                id="userpswd"
+                required
+                class="py-2 px-3 focus:outline-none w-full focus:-outline"
+              />
+              <span class="p-2 flex border-l items-center justify-center"
+                ><ion-icon
+                  data-target="userpswd"
+                  class="cursor-pointer toggle-password toggle-password"
+                  name="eye-off"
+                ></ion-icon
+              ></span>
+            </div>
+            <span id="userPasswordError" class="font-sm text-red-500"></span>
+          </div>
+          <div class="mb-4">
+            <label
+              for="confirmPswd"
+              class="block text-gray-700 text-sm font-bold mb-2"
+              >Confirm Password:</label
+            >
+            <div
+              class="flex items-center justify-between appearance-none border rounded text-gray-700 leading-tight"
+            >
+              <input
+                type="password"
+                name="confirmPswd"
+                id="confirmPswd"
+                required
+                class="py-2 px-3 focus:outline-none w-full focus:-outline"
+              />
+              <span class="p-2 flex border-l items-center justify-center"
+                ><ion-icon
+                  data-target="confirmPswd"
+                  class="cursor-pointer toggle-password toggle-password"
+                  name="eye-off"
+                ></ion-icon
+              ></span>
+            </div>
+          </div>
+          <div class="mb-6">
+            <button
+              id="submitBtn"
+              type="button"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:-outline"
+            >
+              Sign Up
+            </button>
+          </div>
+          <div id="error-message"></div>
+        </form>
+      </div>
+
+      <div class="logged-in hidden">Logged In</div>
+    </section>
+  </body>
+</html>
